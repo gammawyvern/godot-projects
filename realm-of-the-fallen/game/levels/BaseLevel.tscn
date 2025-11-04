@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpkhbdwtp11t5"]
+
+[ext_resource type="PackedScene" uid="uid://c0fkmn53fnrwr" path="res://game/player/BasePlayer.tscn" id="1_qmfax"]
+
+[node name="BaseLevel" type="Node2D"]
+
+[node name="BasePlayer" parent="." instance=ExtResource("1_qmfax")]
+position = Vector2(145, 132)

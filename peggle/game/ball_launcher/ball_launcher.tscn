@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnco6uy0ygnyn"]
+
+[ext_resource type="Script" uid="uid://bgfwhravvox3y" path="res://game/ball_launcher/ball_launcher.gd" id="1_hisfo"]
+[ext_resource type="PackedScene" uid="uid://blluutyw1wtod" path="res://game/ball/ball.tscn" id="2_rtgll"]
+
+[node name="BallLauncher" type="Node2D"]
+script = ExtResource("1_hisfo")
+BallScene = ExtResource("2_rtgll")

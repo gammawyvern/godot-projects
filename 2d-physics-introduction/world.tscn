@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://dej28dmsx5y51"]
+
+[ext_resource type="PackedScene" uid="uid://cl4h3dwrc0uqo" path="res://circle.tscn" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://7ntpipf8bj5a" path="res://physics_spawner.tscn" id="1_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://bjsr88o7r1jnc" path="res://peg.tscn" id="4_aqk2v"]
+
+[node name="World" type="Node2D"]
+
+[node name="Spawner" parent="." instance=ExtResource("1_fj7yv")]
+position = Vector2(256, 0)
+spawnable = ExtResource("1_f3sb7")
+
+[node name="PegBoard" type="Node2D" parent="."]
+
+[node name="Peg" parent="PegBoard" instance=ExtResource("4_aqk2v")]
+position = Vector2(206, 357)
+
+[node name="Peg2" parent="PegBoard" instance=ExtResource("4_aqk2v")]
+position = Vector2(324, 352)
+
+[node name="Peg3" parent="PegBoard" instance=ExtResource("4_aqk2v")]
+position = Vector2(383, 390)
+
+[node name="Peg4" parent="PegBoard" instance=ExtResource("4_aqk2v")]
+position = Vector2(72, 330)
+
+[node name="Peg5" parent="PegBoard" instance=ExtResource("4_aqk2v")]
+position = Vector2(124, 364)
+
+[node name="Peg6" parent="PegBoard" instance=ExtResource("4_aqk2v")]
+position = Vector2(403, 240)
+
+[node name="Peg7" parent="PegBoard" instance=ExtResource("4_aqk2v")]
+position = Vector2(99, 422)
+
+[node name="Peg8" parent="PegBoard" instance=ExtResource("4_aqk2v")]
+position = Vector2(260, 331)
+
+[node name="Peg9" parent="PegBoard" instance=ExtResource("4_aqk2v")]
+position = Vector2(379, 338)
+
+[node name="Peg10" parent="PegBoard" instance=ExtResource("4_aqk2v")]
+position = Vector2(196, 306)
+
+[node name="Peg11" parent="PegBoard" instance=ExtResource("4_aqk2v")]
+position = Vector2(307, 296)
+
+[node name="Peg12" parent="PegBoard" instance=ExtResource("4_aqk2v")]
+position = Vector2(351, 221)
+
+[node name="Peg13" parent="PegBoard" instance=ExtResource("4_aqk2v")]
+position = Vector2(385, 194)
+
+[node name="Peg14" parent="PegBoard" instance=ExtResource("4_aqk2v")]
+position = Vector2(364, 299)
+
+[node name="Peg15" parent="PegBoard" instance=ExtResource("4_aqk2v")]
+position = Vector2(71, 268)
+
+[node name="Peg16" parent="PegBoard" instance=ExtResource("4_aqk2v")]
+position = Vector2(106, 221)
+
+[node name="Peg17" parent="PegBoard" instance=ExtResource("4_aqk2v")]
+position = Vector2(141, 183)
+
+[node name="Peg18" parent="PegBoard" instance=ExtResource("4_aqk2v")]
+position = Vector2(396, 147)
+
+[node name="Peg19" parent="PegBoard" instance=ExtResource("4_aqk2v")]
+position = Vector2(455, 185)
+
+[node name="Peg20" parent="PegBoard" instance=ExtResource("4_aqk2v")]
+position = Vector2(144, 125)
+
+[node name="Peg21" parent="PegBoard" instance=ExtResource("4_aqk2v")]
+position = Vector2(196, 159)
+
+[node name="Peg22" parent="PegBoard" instance=ExtResource("4_aqk2v")]
+position = Vector2(165, 248)
