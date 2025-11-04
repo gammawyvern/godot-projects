@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cw6lhjwsh0eoq"
-path="res://.godot/imported/ground_tiles.png-a4da9bb9c80953a205bd71c8031dffa9.ctex"
+path="res://.godot/imported/ground_tiles.png-9a6042ee093e07e085895a45c60f4893.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/levels/ground_tiles.png"
-dest_files=["res://.godot/imported/ground_tiles.png-a4da9bb9c80953a205bd71c8031dffa9.ctex"]
+source_file="res://game/levels/base_level/ground_tiles.png"
+dest_files=["res://.godot/imported/ground_tiles.png-9a6042ee093e07e085895a45c60f4893.ctex"]
 
 [params]
 
