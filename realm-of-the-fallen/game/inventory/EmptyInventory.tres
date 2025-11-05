@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InventoryData" load_steps=5 format=3 uid="uid://5jwl2gflhap7"]
+
+[ext_resource type="Script" uid="uid://b0334jcf1ru6d" path="res://game/inventory/inventory_data.gd" id="1_trot6"]
+[ext_resource type="Script" uid="uid://dym5g4pjf6byy" path="res://game/items/InventoryItem.gd" id="2_oyb4i"]
+[ext_resource type="Resource" uid="uid://m80pxc3xn12m" path="res://game/items/test_items/TestPotion.tres" id="3_2pd8l"]
+[ext_resource type="Resource" uid="uid://xup2e6n6altm" path="res://game/items/test_items/TestSword.tres" id="4_0fjg3"]
+
+[resource]
+script = ExtResource("1_trot6")
+slots = Array[ExtResource("2_oyb4i")]([ExtResource("3_2pd8l"), null, ExtResource("4_0fjg3"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+metadata/_custom_type_script = "uid://b0334jcf1ru6d"

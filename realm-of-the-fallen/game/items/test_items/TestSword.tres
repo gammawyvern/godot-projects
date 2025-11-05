@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BaseItem" load_steps=3 format=3 uid="uid://xup2e6n6altm"]
+
+[ext_resource type="Texture2D" uid="uid://bw0b15t7qau7v" path="res://icon.svg" id="1_1mbgp"]
+[ext_resource type="Script" uid="uid://dym5g4pjf6byy" path="res://game/items/InventoryItem.gd" id="1_346cd"]
+
+[resource]
+script = ExtResource("1_346cd")
+item_id = "test_sword"
+name = "Test Sword"
+description = "A sword worthy of testing."
+inventory_icon = ExtResource("1_1mbgp")
+metadata/_custom_type_script = "uid://dym5g4pjf6byy"

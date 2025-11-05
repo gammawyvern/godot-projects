@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://bw0b15t7qau7v" path="res://icon.svg" id="1_f0va8"]
 [ext_resource type="Script" uid="uid://c6ww40j4pbufh" path="res://game/player/base_player.gd" id="1_yxm1i"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxm1i"]
-size = Vector2(32, 32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_yxm1i"]
+radius = 12.0
 
 [node name="BasePlayer" type="CharacterBody2D"]
 collision_layer = 2
@@ -12,12 +12,13 @@ motion_mode = 1
 script = ExtResource("1_yxm1i")
 
 [node name="BasePlayerCollisionShape" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_yxm1i")
+shape = SubResource("CircleShape2D_yxm1i")
 
 [node name="BasePlayerSprite" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.188, 0.188)
 texture = ExtResource("1_f0va8")
 
 [node name="BasePlayerCamera" type="Camera2D" parent="."]
+ignore_rotation = false
 zoom = Vector2(2, 2)
