@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-InventoryManager="*res://game/inventory/inventory_manager.gd"
+InventoryManager="*res://game/systems/inventory_manager/inventory_manager.gd"
 
 [dotnet]
 
@@ -65,3 +65,4 @@ player_reset_rotation={
 
 2d_physics/layer_1="world"
 2d_physics/layer_2="player"
+2d_physics/layer_3="loot"

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7djvjf3ssfla"]
+
+[ext_resource type="Script" uid="uid://rq4rppfky8do" path="res://game/items/ground_item_stack/ground_item_stack.gd" id="1_6o4ch"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_al482"]
+size = Vector2(32, 32)
+
+[node name="GroundItemStack" type="Area2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_6o4ch")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_al482")
+
+[node name="GroundSprite" type="Sprite2D" parent="."]

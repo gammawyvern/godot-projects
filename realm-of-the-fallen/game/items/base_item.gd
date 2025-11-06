@@ -4,4 +4,4 @@ class_name BaseItem extends Resource
 @export var name: String
 @export var description: String
 @export var max_stack_count: int = 1
-@export var inventory_icon: Texture
+@export var icon: Texture

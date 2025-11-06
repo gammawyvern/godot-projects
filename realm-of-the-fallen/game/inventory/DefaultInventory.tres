@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="InventoryData" load_steps=7 format=3 uid="uid://5jwl2gflhap7"]
 
 [ext_resource type="Script" uid="uid://b0334jcf1ru6d" path="res://game/inventory/inventory_data.gd" id="1_trot6"]
-[ext_resource type="Script" uid="uid://bh6775x4ptg3e" path="res://game/inventory/item_stack.gd" id="2_tobto"]
+[ext_resource type="Script" uid="uid://bh6775x4ptg3e" path="res://game/items/item_stack.gd" id="2_tobto"]
 [ext_resource type="Resource" uid="uid://m80pxc3xn12m" path="res://game/items/test_items/TestPotion.tres" id="3_2pd8l"]
 [ext_resource type="Resource" uid="uid://xup2e6n6altm" path="res://game/items/test_items/TestSword.tres" id="4_0fjg3"]
 

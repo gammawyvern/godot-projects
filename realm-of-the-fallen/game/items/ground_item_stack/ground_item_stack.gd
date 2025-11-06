@@ -1,0 +1,1 @@
+class_name GroundItemStack extends Area2D

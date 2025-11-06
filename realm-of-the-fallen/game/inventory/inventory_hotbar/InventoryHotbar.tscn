@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://wkxae8cgih3y"]
+
+[ext_resource type="Script" uid="uid://jmn3twhiigen" path="res://game/inventory/inventory_hotbar/inventory_hotbar.gd" id="1_2jq4h"]
+[ext_resource type="Texture2D" uid="uid://bqgiqwi04mf8k" path="res://game/inventory/inventory_hotbar/hotbar_background.png" id="2_7n4nu"]
+[ext_resource type="PackedScene" uid="uid://mdfavrflncrv" path="res://game/inventory/inventory_slot/InventorySlot.tscn" id="2_doppi"]
+
+[node name="InventoryHotbar" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 148.0
+offset_bottom = 40.0
+script = ExtResource("1_2jq4h")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7n4nu")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="InventorySlotGrid" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -16.0
+offset_right = 70.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 4
+
+[node name="InventorySlot1" parent="InventorySlotGrid" instance=ExtResource("2_doppi")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="InventorySlotGrid" instance=ExtResource("2_doppi")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="InventorySlotGrid" instance=ExtResource("2_doppi")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="InventorySlotGrid" instance=ExtResource("2_doppi")]
+layout_mode = 2

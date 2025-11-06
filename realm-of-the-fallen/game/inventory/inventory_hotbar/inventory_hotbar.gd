@@ -15,5 +15,8 @@ func update_inventory_slots():
 	var inventory_stacks = InventoryManager.inventory_data.stacks
 	
 	for inventory_slot_i in range(inventory_slots.size()):
-		var inventory_stack_ui = inventory_slots[inventory_slot_i] as InventoryStackUI
-		inventory_stack_ui.display_item_stack(inventory_stacks[inventory_slot_i])
+		var inventory_slot = inventory_slots[inventory_slot_i] as InventorySlot
+		var inventory_stack = inventory_stacks[inventory_slot_i]
+		
+		if inventory_stack:
+			inventory_slot.display_item_stack(inventory_stack)
