@@ -1,59 +1,52 @@
-[gd_scene load_steps=3 format=3 uid="uid://wkxae8cgih3y"]
+[gd_scene load_steps=4 format=3 uid="uid://wkxae8cgih3y"]
 
-[ext_resource type="Texture2D" uid="uid://bw0b15t7qau7v" path="res://icon.svg" id="1_2jq4h"]
-[ext_resource type="PackedScene" uid="uid://ciqamm8ido684" path="res://game/inventory/ui/inventory_slot/InventorySlotUI.tscn" id="2_sul6d"]
+[ext_resource type="PackedScene" uid="uid://ciqamm8ido684" path="res://game/inventory/ui/inventory_stack/InventoryStackUI.tscn" id="2_sul6d"]
+
+[sub_resource type="Gradient" id="Gradient_fxx4w"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2jq4h"]
+gradient = SubResource("Gradient_fxx4w")
 
 [node name="InventoryHotbar" type="Control"]
 layout_mode = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -74.0
-offset_top = -40.0
-offset_right = 74.0
-grow_horizontal = 2
-grow_vertical = 0
+anchors_preset = 0
+offset_right = 148.0
+offset_bottom = 40.0
 
 [node name="BackgroundTexture" type="TextureRect" parent="."]
-self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_2jq4h")
+texture = SubResource("GradientTexture1D_2jq4h")
 expand_mode = 1
 
-[node name="InventorySlotUI0" parent="." instance=ExtResource("2_sul6d")]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 36.0
-offset_bottom = 36.0
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -16.0
+offset_right = 70.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 4
 
-[node name="InventorySlotUI1" parent="." instance=ExtResource("2_sul6d")]
-layout_mode = 0
-offset_left = 40.0
-offset_top = 4.0
-offset_right = 72.0
-offset_bottom = 36.0
-slot_index = 1
+[node name="InventorySlotUI1" parent="GridContainer" instance=ExtResource("2_sul6d")]
+layout_mode = 2
 
-[node name="InventorySlotUI2" parent="." instance=ExtResource("2_sul6d")]
-layout_mode = 0
-offset_left = 76.0
-offset_top = 4.0
-offset_right = 108.0
-offset_bottom = 36.0
-slot_index = 2
+[node name="InventorySlotUI2" parent="GridContainer" instance=ExtResource("2_sul6d")]
+layout_mode = 2
 
-[node name="InventorySlotUI3" parent="." instance=ExtResource("2_sul6d")]
-layout_mode = 0
-offset_left = 112.0
-offset_top = 4.0
-offset_right = 144.0
-offset_bottom = 36.0
-slot_index = 3
+[node name="InventorySlotUI3" parent="GridContainer" instance=ExtResource("2_sul6d")]
+layout_mode = 2
+
+[node name="InventorySlotUI4" parent="GridContainer" instance=ExtResource("2_sul6d")]
+layout_mode = 2

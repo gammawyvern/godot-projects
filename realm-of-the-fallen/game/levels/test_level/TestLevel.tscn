@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://dytpw5162ui7d"]
+[gd_scene load_steps=8 format=4 uid="uid://dytpw5162ui7d"]
 
 [ext_resource type="PackedScene" uid="uid://cpkhbdwtp11t5" path="res://game/levels/base_level/BaseLevel.tscn" id="1_0avvg"]
-[ext_resource type="Script" uid="uid://dlhixi83h18wd" path="res://game/game_loader/GameLoader.gd" id="2_78tgo"]
+[ext_resource type="Script" uid="uid://dlhixi83h18wd" path="res://game/game_loader/game_loader.gd" id="2_78tgo"]
 [ext_resource type="PackedScene" uid="uid://c0fkmn53fnrwr" path="res://game/player/BasePlayer.tscn" id="2_ghdmg"]
 [ext_resource type="Texture2D" uid="uid://cw6lhjwsh0eoq" path="res://game/levels/base_level/ground_tiles.png" id="2_y6jxj"]
-[ext_resource type="Resource" uid="uid://5jwl2gflhap7" path="res://game/inventory/EmptyInventory.tres" id="3_hgjmg"]
-[ext_resource type="PackedScene" uid="uid://wkxae8cgih3y" path="res://game/inventory/ui/inventory_hotbar/InventoryHotbar.tscn" id="6_835mh"]
+[ext_resource type="Resource" uid="uid://5jwl2gflhap7" path="res://game/inventory/DefaultInventory.tres" id="3_hgjmg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_78tgo"]
 texture = ExtResource("2_y6jxj")
@@ -59,9 +58,3 @@ tile_set = SubResource("TileSet_hgjmg")
 
 [node name="BasePlayer" parent="." index="2" instance=ExtResource("2_ghdmg")]
 position = Vector2(789, 321)
-
-[node name="InventoryHotbar" parent="BasePlayer" index="3" instance=ExtResource("6_835mh")]
-offset_left = -70.0
-offset_top = 110.0
-offset_right = 78.0
-offset_bottom = 150.0
