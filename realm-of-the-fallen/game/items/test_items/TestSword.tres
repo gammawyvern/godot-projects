@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_346cd")
-item_id = "test_sword"
+id = "test_sword"
 name = "Test Sword"
 description = "A sword worthy of testing."
 inventory_icon = ExtResource("1_1mbgp")

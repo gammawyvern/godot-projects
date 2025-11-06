@@ -46,7 +46,7 @@ func pickup_item_stack(item_stack: ItemStack) -> ItemStack:
 	
 	if inventory_item_map.has(item_stack.item.id):
 		for existing_item_stack_i in inventory_item_map[item_stack.item.id]:
-			var existing_item_stack: ItemStack = inventory_data[existing_item_stack_i]
+			var existing_item_stack: ItemStack = inventory_data.stacks[existing_item_stack_i]
 			_combine_item_stacks(item_stack, existing_item_stack)
 			
 			if item_stack.count <= 0:
@@ -80,7 +80,7 @@ func _combine_item_stacks(src_item_stack: ItemStack, dest_item_stack: ItemStack)
 	var remaining_dest_item_stack_count: int = dest_item_stack.item.max_stack_count - dest_item_stack.count
 	var transfer_count = min(src_item_stack.count, remaining_dest_item_stack_count)
 	dest_item_stack.count += transfer_count
-	src_item_stack -= transfer_count
+	src_item_stack.count -= transfer_count
 	
 	assert(dest_item_stack.count <= dest_item_stack.item.max_stack_count)
 	assert(src_item_stack.count >= 0)
