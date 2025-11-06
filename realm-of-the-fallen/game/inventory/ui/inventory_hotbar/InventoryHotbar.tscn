@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://wkxae8cgih3y"]
+[gd_scene load_steps=5 format=3 uid="uid://wkxae8cgih3y"]
 
+[ext_resource type="Script" uid="uid://jmn3twhiigen" path="res://game/inventory/ui/inventory_hotbar/inventory_hotbar.gd" id="1_2jq4h"]
 [ext_resource type="PackedScene" uid="uid://ciqamm8ido684" path="res://game/inventory/ui/inventory_stack/InventoryStackUI.tscn" id="2_sul6d"]
 
 [sub_resource type="Gradient" id="Gradient_fxx4w"]
@@ -13,6 +14,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 148.0
 offset_bottom = 40.0
+script = ExtResource("1_2jq4h")
 
 [node name="BackgroundTexture" type="TextureRect" parent="."]
 layout_mode = 1
@@ -24,7 +26,7 @@ grow_vertical = 2
 texture = SubResource("GradientTexture1D_2jq4h")
 expand_mode = 1
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="InventorySlotGrid" type="GridContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -39,14 +41,14 @@ grow_horizontal = 2
 grow_vertical = 2
 columns = 4
 
-[node name="InventorySlotUI1" parent="GridContainer" instance=ExtResource("2_sul6d")]
+[node name="InventoryStackUI1" parent="InventorySlotGrid" instance=ExtResource("2_sul6d")]
 layout_mode = 2
 
-[node name="InventorySlotUI2" parent="GridContainer" instance=ExtResource("2_sul6d")]
+[node name="InventoryStackUI2" parent="InventorySlotGrid" instance=ExtResource("2_sul6d")]
 layout_mode = 2
 
-[node name="InventorySlotUI3" parent="GridContainer" instance=ExtResource("2_sul6d")]
+[node name="InventoryStackUI3" parent="InventorySlotGrid" instance=ExtResource("2_sul6d")]
 layout_mode = 2
 
-[node name="InventorySlotUI4" parent="GridContainer" instance=ExtResource("2_sul6d")]
+[node name="InventoryStackUI4" parent="InventorySlotGrid" instance=ExtResource("2_sul6d")]
 layout_mode = 2

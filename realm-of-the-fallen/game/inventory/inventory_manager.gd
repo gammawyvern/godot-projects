@@ -58,12 +58,10 @@ func pickup_item_stack(item_stack: ItemStack) -> ItemStack:
 		if empty_stack_i == -1:
 			return item_stack
 		
-		var new_item_stack = ItemStack.new()
-		new_item_stack.item = item_stack.item
+		var new_item_stack = item_stack.duplicate(false)
 		new_item_stack.count = 0
-		
 		_combine_item_stacks(item_stack, new_item_stack)
-		assert(new_item_stack.count > 0, "New item stack count less than 0.")
+		assert(new_item_stack.count > 0, "New item stack count less than or equal to 0.")
 		
 		inventory_data.stacks[empty_stack_i] = new_item_stack
 		
