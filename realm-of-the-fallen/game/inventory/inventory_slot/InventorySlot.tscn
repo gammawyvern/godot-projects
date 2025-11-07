@@ -12,7 +12,6 @@ anchors_preset = 0
 offset_right = 32.0
 offset_bottom = 32.0
 script = ExtResource("1_ec601")
-item_stack_icon_scene = ExtResource("2_xavve")
 
 [node name="SlotBorder" type="TextureRect" parent="."]
 layout_mode = 1
@@ -22,3 +21,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_wa58t")
+
+[node name="ItemStackIcon" parent="." instance=ExtResource("2_xavve")]
+layout_mode = 0

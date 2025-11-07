@@ -19,5 +19,5 @@ metadata/_custom_type_script = "uid://bh6775x4ptg3e"
 
 [resource]
 script = ExtResource("1_trot6")
-stacks = Array[ExtResource("2_tobto")]([SubResource("Resource_djqu4"), null, SubResource("Resource_hrf6d"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+stacks = Array[ExtResource("2_tobto")]([SubResource("Resource_djqu4"), null, SubResource("Resource_hrf6d"), null])
 metadata/_custom_type_script = "uid://b0334jcf1ru6d"

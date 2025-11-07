@@ -44,6 +44,8 @@ func pickup_item_stack(item_stack: ItemStack) -> ItemStack:
 	assert(item_stack, "ItemStack is not valid.")
 	assert(item_stack.count > 0, "ItemStack has invalid count.")
 	
+	var initial_item_stack_count: int = item_stack.count
+	
 	if inventory_item_map.has(item_stack.item.id):
 		for existing_item_stack_i in inventory_item_map[item_stack.item.id]:
 			var existing_item_stack: ItemStack = inventory_data.stacks[existing_item_stack_i]
@@ -56,6 +58,8 @@ func pickup_item_stack(item_stack: ItemStack) -> ItemStack:
 	while item_stack.count > 0:
 		var empty_stack_i: int = inventory_data.stacks.find(null)
 		if empty_stack_i == -1:
+			if item_stack.count != initial_item_stack_count:
+				emit_signal("inventory_changed")
 			return item_stack
 		
 		var new_item_stack = item_stack.duplicate(false)

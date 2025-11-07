@@ -30,3 +30,21 @@ func _physics_handle_movement_input(_delta: float) -> void:
 		var movement_speed_multi: float = tile_data.get_custom_data("speed_multiplier")
 		if movement_speed_multi != null:
 			velocity *= movement_speed_multi
+
+# Testing
+
+var test_potion: BaseItem = preload("res://game/items/test_items/TestPotion.tres")
+
+func _input(event: InputEvent) -> void:
+	if not event.is_action_pressed("player_reset_rotation"):
+		return
+	
+	var item_stack: ItemStack = ItemStack.create_stack(test_potion, 4)
+	var item_stack_position = Vector2(50 * randf() + 800, 50 * randf() + 200)
+	ItemManager.spawn_ground_item_stack(item_stack, item_stack_position)
+
+# Signals
+
+func _on_pickup_area_area_entered(area: Area2D) -> void:
+	var ground_item_stack = area as GroundItemStack
+	ground_item_stack.pickup()
