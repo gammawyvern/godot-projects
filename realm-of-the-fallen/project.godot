@@ -20,6 +20,14 @@ config/icon="res://icon.svg"
 InventoryManager="*res://game/systems/inventory_manager/inventory_manager.gd"
 ItemManager="*res://game/systems/item_manager/item_manager.gd"
 
+[display]
+
+window/size/viewport_width=1024
+window/size/viewport_height=512
+window/layer_7="projectiles"
+window/layer_9=""
+window/layer_13=""
+
 [dotnet]
 
 project/assembly_name="Realm of the Fallen"
@@ -64,6 +72,13 @@ player_reset_rotation={
 
 [layer_names]
 
+2d_render/layer_1="void"
+2d_render/layer_3="ground"
+2d_render/layer_5="ground_decorations"
+2d_render/layer_7="ground_item_stacks"
+2d_render/layer_13="projectiles"
+2d_render/layer_16="player"
+2d_render/layer_20="walls"
 2d_physics/layer_1="world"
 2d_physics/layer_2="player"
 2d_physics/layer_3="loot"

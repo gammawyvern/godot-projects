@@ -10,6 +10,8 @@ radius = 12.0
 size = Vector2(24, 24)
 
 [node name="BasePlayer" type="CharacterBody2D"]
+top_level = true
+visibility_layer = 32768
 collision_layer = 2
 motion_mode = 1
 script = ExtResource("1_yxm1i")

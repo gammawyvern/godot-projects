@@ -7,6 +7,7 @@
 size = Vector2(32, 32)
 
 [node name="GroundItemStack" type="Area2D"]
+visibility_layer = 64
 scale = Vector2(0.5, 0.5)
 collision_layer = 4
 collision_mask = 0

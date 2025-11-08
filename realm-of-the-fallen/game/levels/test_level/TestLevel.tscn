@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c0fkmn53fnrwr" path="res://game/player/BasePlayer.tscn" id="2_ghdmg"]
 [ext_resource type="Texture2D" uid="uid://cw6lhjwsh0eoq" path="res://game/levels/base_level/ground_tiles.png" id="2_y6jxj"]
 [ext_resource type="Resource" uid="uid://5jwl2gflhap7" path="res://game/inventory/DefaultInventory.tres" id="3_hgjmg"]
-[ext_resource type="PackedScene" uid="uid://wkxae8cgih3y" path="res://game/inventory/inventory_hotbar/InventoryHotbar.tscn" id="6_835mh"]
+[ext_resource type="PackedScene" uid="uid://bp5way7xd6y3a" path="res://game/inventory/inventory_ui.tscn" id="6_835mh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_78tgo"]
 texture = ExtResource("2_y6jxj")
@@ -60,8 +60,4 @@ tile_set = SubResource("TileSet_hgjmg")
 [node name="BasePlayer" parent="." index="2" instance=ExtResource("2_ghdmg")]
 position = Vector2(789, 321)
 
-[node name="InventoryHotbar" parent="." index="3" instance=ExtResource("6_835mh")]
-offset_left = 733.0
-offset_top = 394.0
-offset_right = 881.0
-offset_bottom = 434.0
+[node name="InventoryUI" parent="." index="3" instance=ExtResource("6_835mh")]

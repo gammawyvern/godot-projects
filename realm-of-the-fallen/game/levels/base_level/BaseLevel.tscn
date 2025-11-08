@@ -30,6 +30,8 @@ sources/0 = SubResource("TileSetAtlasSource_1t233")
 texture_filter = 1
 
 [node name="FloorTiles" type="TileMapLayer" parent="."]
+visibility_layer = 4
 tile_set = SubResource("TileSet_hm1wt")
 
 [node name="WallTiles" type="TileMapLayer" parent="."]
+visibility_layer = 4
