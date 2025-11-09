@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxoy5oha0p147"]
+
+[ext_resource type="Script" uid="uid://bs628mchg15ql" path="res://game/ui/main_menu/main_menu.gd" id="1_gof3u"]
+[ext_resource type="PackedScene" uid="uid://bol8kgara6ec1" path="res://game/level/level.tscn" id="2_2ww3u"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gof3u")
+level_scene = ExtResource("2_2ww3u")
+
+[node name="StartPanel" type="Panel" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -20.0
+offset_right = 64.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButton" type="Button" parent="StartPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start Game"
+
+[connection signal="pressed" from="StartPanel/StartButton" to="." method="_on_start_button_pressed"]

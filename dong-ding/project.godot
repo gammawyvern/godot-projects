@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="dong-ding"
-run/main_scene="uid://bol8kgara6ec1"
+run/main_scene="uid://cxoy5oha0p147"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

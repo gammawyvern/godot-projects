@@ -1,13 +1,16 @@
-extends Area2D
+class_name PlayerBall extends Area2D
 
-@export var starting_checkpoint: Checkpoint
+signal gained_points(amount: int)
+signal game_over
 
 const SPEED: float = 400
 
-signal gained_points(amount: int)
+@export var starting_checkpoint: Checkpoint
 
 @onready var _direction: Vector2 = starting_checkpoint.jump_direction
+
 var _moving: bool = false
+var _dead: bool = false
 
 func _physics_process(delta: float) -> void:
 	if not _moving:
@@ -28,8 +31,10 @@ func _on_area_entered(area: Area2D) -> void:
 		emit_signal("gained_points", 1)
 	
 	if area is Obstacle:
-		print("You suck ass.")
+		_dead = true
+		emit_signal("game_over")
+		queue_free()
 
 func _on_area_exited(area: Area2D) -> void:
-	if area is NearbyObstacleArea:
-		emit_signal("gained_points", 2)
+	if area is NearbyObstacleArea and not _dead:
+		emit_signal("gained_points", 5)

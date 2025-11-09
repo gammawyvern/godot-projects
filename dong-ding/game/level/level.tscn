@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bol8kgara6ec1"]
+[gd_scene load_steps=9 format=3 uid="uid://bol8kgara6ec1"]
 
 [ext_resource type="Script" uid="uid://clg2pr5na0xhw" path="res://game/level/level.gd" id="1_8xyjh"]
 [ext_resource type="PackedScene" uid="uid://cklygweb21jfr" path="res://game/checkpoint/checkpoint.tscn" id="2_8xyjh"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d1bgcg5djwsxj" path="res://game/obstacle_timer/obstacle_timer.tscn" id="5_dynoe"]
 [ext_resource type="PackedScene" uid="uid://b4bv23gxn1u8f" path="res://game/obstacle/obstacle.tscn" id="6_k26x8"]
 [ext_resource type="PackedScene" uid="uid://3ke8ephufp1m" path="res://game/ui/points_ui/points_ui.tscn" id="7_vr1x4"]
+[ext_resource type="PackedScene" uid="uid://cbhvqt264j1bc" path="res://game/ui/game_over_ui/game_over_ui.tscn" id="8_m2x2l"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_8xyjh")
@@ -23,7 +24,7 @@ scale = Vector2(36, 1)
 jump_direction = Vector2(0, -1)
 
 [node name="PlayerBall" parent="." node_paths=PackedStringArray("starting_checkpoint") instance=ExtResource("2_nmaai")]
-position = Vector2(576, 48)
+position = Vector2(576, 50)
 starting_checkpoint = NodePath("../TopCheckpoint")
 
 [node name="ObstacleClearerLeft" parent="." instance=ExtResource("4_qq5er")]
@@ -42,5 +43,9 @@ max_time_interval = 2.0
 
 [node name="PointsUI" parent="UI" instance=ExtResource("7_vr1x4")]
 
+[node name="GameOverUI" parent="UI" instance=ExtResource("8_m2x2l")]
+visible = false
+
 [connection signal="gained_points" from="PlayerBall" to="." method="_on_player_ball_gained_points"]
+[connection signal="game_over" from="PlayerBall" to="." method="_on_player_ball_game_over"]
 [connection signal="timeout" from="ObstacleTimer" to="." method="_on_obstacle_timer_timeout"]
