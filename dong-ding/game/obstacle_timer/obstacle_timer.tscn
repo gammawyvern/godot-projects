@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1bgcg5djwsxj"]
+
+[ext_resource type="Script" uid="uid://bqbhaec2r5rdm" path="res://game/obstacle_timer/obstacle_timer.gd" id="1_syhhd"]
+
+[node name="ObstacleTimer" type="Timer"]
+one_shot = true
+autostart = true
+script = ExtResource("1_syhhd")
+min_time_interval = 2.0
+max_time_interval = 10.0
+
+[connection signal="timeout" from="." to="." method="_on_timeout"]

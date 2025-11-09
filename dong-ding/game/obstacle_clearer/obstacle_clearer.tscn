@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://de8wckke0wf3f"]
+
+[ext_resource type="Script" uid="uid://dahnn3gqqq7n5" path="res://game/obstacle_clearer/obstacle_clearer.gd" id="1_mbbnm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xvnb7"]
+size = Vector2(32, 32)
+
+[node name="ObstacleClearer" type="Area2D"]
+collision_layer = 8
+collision_mask = 4
+monitorable = false
+script = ExtResource("1_mbbnm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xvnb7")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
