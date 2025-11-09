@@ -1,9 +1,13 @@
 extends Node2D
 
-@export var obstacle: PackedScene
-
 const LANE_OFFSET: float = 240
 const LANE_SIZE: float = 48
+
+@export var obstacle: PackedScene
+
+@onready var points_ui: PointsUI = $UI/PointsUI 
+
+var _points: int = 0
 
 func _on_obstacle_timer_timeout() -> void:
 	var new_obstacle = obstacle.instantiate() as Obstacle
@@ -21,3 +25,7 @@ func _on_obstacle_timer_timeout() -> void:
 
 func _random_lane() -> int:
 	return randi() % 3
+
+func _on_player_ball_gained_points(amount: int) -> void:
+	_points += amount
+	points_ui.display_points(_points)

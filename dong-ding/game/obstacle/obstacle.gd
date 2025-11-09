@@ -10,5 +10,3 @@ func initialize(direction: Vector2, speed: float):
 func _physics_process(delta: float) -> void:
 	if _initialized:
 		position += delta * _velocity
-
-# TODO Add logic for nearby passes

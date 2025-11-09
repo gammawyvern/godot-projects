@@ -1,0 +1,1 @@
+class_name NearbyObstacleArea extends Area2D

@@ -4,6 +4,8 @@ extends Area2D
 
 const SPEED: float = 400
 
+signal gained_points(amount: int)
+
 @onready var _direction: Vector2 = starting_checkpoint.jump_direction
 var _moving: bool = false
 
@@ -22,6 +24,12 @@ func _on_area_entered(area: Area2D) -> void:
 		var checkpoint = area as Checkpoint
 		_direction = checkpoint.jump_direction
 		_moving = false
+		
+		emit_signal("gained_points", 1)
 	
 	if area is Obstacle:
 		print("You suck ass.")
+
+func _on_area_exited(area: Area2D) -> void:
+	if area is NearbyObstacleArea:
+		emit_signal("gained_points", 2)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4bv23gxn1u8f"]
+[gd_scene load_steps=6 format=3 uid="uid://b4bv23gxn1u8f"]
 
 [ext_resource type="Script" uid="uid://dh0j7ghdh1235" path="res://game/obstacle/obstacle.gd" id="1_qwpj6"]
+[ext_resource type="Script" uid="uid://sql71dyrueau" path="res://game/obstacle/nearby_area.gd" id="2_0d33w"]
 [ext_resource type="Texture2D" uid="uid://bnoja5mw2yioh" path="res://icon.svg" id="2_8dc3q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0d33w"]
@@ -22,6 +23,7 @@ shape = SubResource("RectangleShape2D_0d33w")
 collision_layer = 16
 collision_mask = 0
 monitoring = false
+script = ExtResource("2_0d33w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NearbyArea"]
 shape = SubResource("RectangleShape2D_8dc3q")
