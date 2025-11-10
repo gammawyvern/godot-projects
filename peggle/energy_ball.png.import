@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1pu31i3d1lhy"
-path="res://.godot/imported/energy_ball.png-1023ed6fe04ef038743337de336aad12.ctex"
+uid="uid://bj5rrdw5luxso"
+path="res://.godot/imported/energy_ball.png-e38219b72cd757cd241b347594deb846.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/ball/energy_ball.png"
-dest_files=["res://.godot/imported/energy_ball.png-1023ed6fe04ef038743337de336aad12.ctex"]
+source_file="res://energy_ball.png"
+dest_files=["res://.godot/imported/energy_ball.png-e38219b72cd757cd241b347594deb846.ctex"]
 
 [params]
 
@@ -37,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
