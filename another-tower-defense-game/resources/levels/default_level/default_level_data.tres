@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://ber4371gtnbdn"]
+
+[ext_resource type="Script" uid="uid://bdea52dcrsmx4" path="res://resource_types/round_data.gd" id="1_x1n6k"]
+[ext_resource type="Resource" uid="uid://la6gjrme7wo0" path="res://resources/levels/default_level/round_1/round_1.tres" id="2_haak3"]
+[ext_resource type="Script" uid="uid://d3bro5lu7aeqp" path="res://resource_types/level_data.gd" id="2_ob6i8"]
+
+[resource]
+script = ExtResource("2_ob6i8")
+rounds = Array[ExtResource("1_x1n6k")]([ExtResource("2_haak3")])
+metadata/_custom_type_script = "uid://d3bro5lu7aeqp"

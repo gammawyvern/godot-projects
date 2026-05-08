@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://djenhs28rp4iu"]
+
+[ext_resource type="PackedScene" uid="uid://cfwbq3ifgb410" path="res://scenes/enemy_path_network/enemy_path_network.tscn" id="1_5ntxm"]
+[ext_resource type="Script" uid="uid://ckkabe8ckxxq7" path="res://scenes/level/level.gd" id="1_nbgty"]
+
+[node name="Level" type="Node2D" unique_id=965586637]
+script = ExtResource("1_nbgty")
+
+[node name="BackgroundImage" type="Sprite2D" parent="." unique_id=1505665932]
+
+[node name="EnemyPathNetwork" parent="." unique_id=1637873289 instance=ExtResource("1_5ntxm")]

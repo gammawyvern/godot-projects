@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SpawnData" format=3 uid="uid://dug0y5xrpal5g"]
+
+[ext_resource type="Resource" uid="uid://blbyfh080pht4" path="res://resources/enemy_layers/red_layer.tres" id="1_36fwq"]
+[ext_resource type="Script" uid="uid://cdghdvmo0dnpx" path="res://resource_types/spawn_data.gd" id="1_efj6y"]
+
+[resource]
+script = ExtResource("1_efj6y")
+enemy_layer = ExtResource("1_36fwq")
+enemy_count = 20
+interval = 0.2
+metadata/_custom_type_script = "uid://cdghdvmo0dnpx"

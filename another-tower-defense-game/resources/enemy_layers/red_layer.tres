@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="EnemyLayer" format=3 uid="uid://blbyfh080pht4"]
+
+[ext_resource type="Script" uid="uid://dfi3o8gklgneo" path="res://resource_types/enemy_layer.gd" id="1_5hkkv"]
+
+[resource]
+script = ExtResource("1_5hkkv")
+color = Color(0.89411765, 0, 0, 1)
+metadata/_custom_type_script = "uid://dfi3o8gklgneo"

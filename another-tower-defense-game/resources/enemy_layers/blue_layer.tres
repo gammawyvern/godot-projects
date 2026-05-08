@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyLayer" format=3 uid="uid://di2mpflmsyomp"]
+
+[ext_resource type="Script" uid="uid://dfi3o8gklgneo" path="res://resource_types/enemy_layer.gd" id="1_se0si"]
+[ext_resource type="Resource" uid="uid://blbyfh080pht4" path="res://resources/enemy_layers/red_layer.tres" id="2_a3u4x"]
+
+[resource]
+script = ExtResource("1_se0si")
+color = Color(0.36165366, 0.36453035, 1, 1)
+speed = 1.1
+children = Array[ExtResource("1_se0si")]([ExtResource("2_a3u4x")])
+metadata/_custom_type_script = "uid://dfi3o8gklgneo"
