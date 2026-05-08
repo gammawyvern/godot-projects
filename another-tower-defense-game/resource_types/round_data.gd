@@ -2,6 +2,9 @@ class_name RoundData extends Resource
 
 @export var spawns: Array[SpawnData]
 
+func _sort_by_time(a: SpawnEvent, b: SpawnEvent) -> bool:
+	return true if a.time < b.time else false
+
 func to_spawn_events() -> Array[SpawnEvent]:
 	var spawn_events: Array[SpawnEvent] = []
 	
@@ -12,5 +15,7 @@ func to_spawn_events() -> Array[SpawnEvent]:
 			spawn_event.enemy_layer = spawn_data.enemy_layer
 			
 			spawn_events.append(spawn_event)
+	
+	spawn_events.sort_custom(_sort_by_time)
 	
 	return spawn_events
