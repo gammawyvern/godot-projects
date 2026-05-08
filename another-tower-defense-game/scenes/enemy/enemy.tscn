@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dmtmyqwec06de" path="res://scenes/enemy/white_balloon.png" id="2_agpjo"]
 
 [node name="Enemy" type="PathFollow2D" unique_id=2079880012]
+rotates = false
+loop = false
 script = ExtResource("1_22olo")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=765188931]

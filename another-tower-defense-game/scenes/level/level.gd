@@ -44,21 +44,26 @@ func _calculate_round_step(delta: float) -> void:
 	
 	if _round_time > _round_spawn_events[0].time:
 		var spawn_event: SpawnEvent = _round_spawn_events.pop_front()
-		_spawn_enemy(spawn_event.enemy_layer)
+		_spawn_enemy_at_start(spawn_event.enemy_layer)
 		_calculate_round_step(0)
 
-# Enemy Functions
+# Enemy Management Functions
 
-func _spawn_enemy(enemy_layer: EnemyLayer) -> void:
-	var first_path: Path2D = get_paths().get(0)
-	assert(first_path != null)
+func _spawn_enemy(enemy_layer: EnemyLayer, path: Path2D, path_progress: float) -> void:
+	var enemy: Enemy = EnemyManager.instantiate_enemy(enemy_layer)
 	
-	var enemy_node: Enemy = EnemyManager.instantiate_enemy(enemy_layer)
-	first_path.add_child(enemy_node)
+	enemy.killed.connect(_handle_enemy_killed)
+	enemy.reached_end_of_path.connect(enemy_path_network.handle_enemy_reached_end_of_path)
+	
+	path.add_child(enemy)
+	enemy.progress = path_progress
 
-# Path Functions
+func _spawn_enemy_at_start(enemy_layer: EnemyLayer) -> void:
+	_spawn_enemy(enemy_layer, enemy_path_network.get_first_path(), 0)
 
-func get_paths() -> Array[Path2D]:
-	var paths: Array[Path2D] = []
-	paths.assign(enemy_path_network.get_children())
-	return paths
+func _handle_enemy_killed(enemy: Enemy, children_layers: Array[EnemyLayer]) -> void:
+	var enemy_path: Path2D = enemy.get_parent()
+	for enemy_layer in children_layers:
+		_spawn_enemy(enemy_layer, enemy_path, enemy.progress)
+	
+	enemy.queue_free()
