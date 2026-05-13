@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="RoundData" format=3 uid="uid://uff5h086047r"]
+
+[ext_resource type="Script" uid="uid://bdea52dcrsmx4" path="res://resource_types/round_data.gd" id="1_xb5xo"]
+[ext_resource type="Script" uid="uid://cdghdvmo0dnpx" path="res://resource_types/spawn_data.gd" id="2_u6gus"]
+[ext_resource type="Resource" uid="uid://8ybp8arsk7ay" path="res://resources/levels/default_level/round_2/blues.tres" id="3_u6gus"]
+
+[resource]
+script = ExtResource("1_xb5xo")
+spawns = Array[ExtResource("2_u6gus")]([ExtResource("3_u6gus")])
+metadata/_custom_type_script = "uid://bdea52dcrsmx4"

@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_se0si")
-color = Color(0.36165366, 0.36453035, 1, 1)
-speed = 1.1
+color = Color(0.2171357, 0.40614486, 1, 1)
+speed = 1.2
 children = Array[ExtResource("1_se0si")]([ExtResource("2_a3u4x")])
 metadata/_custom_type_script = "uid://dfi3o8gklgneo"

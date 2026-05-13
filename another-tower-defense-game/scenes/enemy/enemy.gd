@@ -17,14 +17,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	_move(delta)
 
-## Takes passed damage.
-## Returns an array holding what children should be spawned after damage
-func damage(amount: int) -> void:
-	damage_taken += amount
-	
-	if damage_taken >= layer.health:
-		killed.emit(self, _calculate_children())
-
 # Movement Logic Functions
 
 func _move(delta: float) -> void:
@@ -40,7 +32,14 @@ func switch_to_path(new_path: Path2D, starting_progress: float) -> void:
 	reparent(new_path)
 	progress = starting_progress
 
-# Death Logic Functions
+# Damage Logic Functions
+
+func damage(amount: int) -> void:
+	damage_taken += amount
+	
+	if damage_taken >= layer.health:
+		get_parent().remove_child(self)
+		killed.emit(self, _calculate_children())
 
 func _calculate_children() -> Array[EnemyLayer]:
 	# TODO: Calculate what to actually spawn

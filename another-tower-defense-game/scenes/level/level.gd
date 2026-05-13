@@ -14,6 +14,9 @@ var _round_spawn_events: Array[SpawnEvent] = []
 
 func _ready() -> void:
 	assert(level_data != null)
+	assert(enemy_path_network != null)
+	
+	enemy_path_network.enemy_leaked.connect(_handle_enemy_leaked)
 
 func _process(delta: float) -> void:
 	_calculate_round_step(delta)
@@ -27,6 +30,7 @@ func _input(event: InputEvent) -> void:
 func _begin_next_round():
 	_round += 1
 	_round_time = 0
+	_round_spawn_events.clear()
 	
 	var round_data: RoundData = level_data.rounds[_round]
 	_round_spawn_events.assign(round_data.to_spawn_events())
@@ -47,6 +51,15 @@ func _calculate_round_step(delta: float) -> void:
 		_spawn_enemy_at_start(spawn_event.enemy_layer)
 		_calculate_round_step(0)
 
+func _try_end_round() -> void:
+	if !_round_spawn_events.is_empty():
+		return
+	
+	if enemy_path_network.get_all_enemies().is_empty():
+		return
+	
+	_is_round_in_progress = false
+
 # Enemy Management Functions
 
 func _spawn_enemy(enemy_layer: EnemyLayer, path: Path2D, path_progress: float) -> void:
@@ -62,8 +75,16 @@ func _spawn_enemy_at_start(enemy_layer: EnemyLayer) -> void:
 	_spawn_enemy(enemy_layer, enemy_path_network.get_first_path(), 0)
 
 func _handle_enemy_killed(enemy: Enemy, children_layers: Array[EnemyLayer]) -> void:
+	enemy.queue_free()
+	
 	var enemy_path: Path2D = enemy.get_parent()
+	
 	for enemy_layer in children_layers:
 		_spawn_enemy(enemy_layer, enemy_path, enemy.progress)
 	
+	if children_layers.is_empty():
+		_try_end_round.call_deferred()
+
+func _handle_enemy_leaked(enemy: Enemy) -> void:
 	enemy.queue_free()
+	_try_end_round()
