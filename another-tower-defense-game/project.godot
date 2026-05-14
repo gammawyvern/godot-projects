@@ -19,12 +19,20 @@ config/icon="res://icon.svg"
 
 EnemyManager="*uid://cr7t46dk77hir"
 
+[layer_names]
+
+2d_physics/layer_1="walls"
+2d_physics/layer_2="obstacles"
+2d_physics/layer_3="enemies"
+2d_physics/layer_4="projectiles"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

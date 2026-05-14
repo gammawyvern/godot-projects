@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bt1di7tdb2dcx"]
+
+[ext_resource type="PackedScene" uid="uid://ccy5mgcfyb7t7" path="res://scenes/tower/tower.tscn" id="1_31ul7"]
+[ext_resource type="Script" uid="uid://bu1bvcllm275r" path="res://data/towers/dart_tower/dart_tower.gd" id="2_axveo"]
+[ext_resource type="Texture2D" uid="uid://byj3vs6uv4qmn" path="res://data/towers/dart_tower/dart_tower.png" id="2_hdk20"]
+[ext_resource type="PackedScene" uid="uid://rgvjpb1eu2tt" path="res://data/towers/dart_tower/dart_projectile.tscn" id="3_82u87"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axveo"]
+atlas = ExtResource("2_hdk20")
+region = Rect2(0, 0, 32, 32)
+
+[node name="DartTower" unique_id=589099908 instance=ExtResource("1_31ul7")]
+script = ExtResource("2_axveo")
+projectile_scene = ExtResource("3_82u87")
+
+[node name="TowerSprite" parent="." index="1" unique_id=314573998]
+texture = SubResource("AtlasTexture_axveo")

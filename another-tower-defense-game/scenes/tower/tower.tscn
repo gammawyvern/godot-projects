@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ccy5mgcfyb7t7"]
+
+[ext_resource type="Texture2D" uid="uid://dl2dy6qrhth3n" path="res://scenes/tower/tower_base.png" id="1_mg2hd"]
+[ext_resource type="Script" uid="uid://do1vmlki7okvt" path="res://scenes/tower/tower.gd" id="1_r21n7"]
+
+[node name="Tower" type="Node2D" unique_id=589099908]
+scale = Vector2(2, 2)
+script = ExtResource("1_r21n7")
+
+[node name="TowerBaseSprite" type="Sprite2D" parent="." unique_id=401747382]
+texture = ExtResource("1_mg2hd")
+
+[node name="TowerSprite" type="Sprite2D" parent="." unique_id=314573998]
