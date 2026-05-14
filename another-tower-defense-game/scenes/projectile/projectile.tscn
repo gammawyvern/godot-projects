@@ -1,15 +1,6 @@
 [gd_scene format=3 uid="uid://th7ixfwwyj0x"]
 
 [ext_resource type="Script" uid="uid://cjtf4n2ykii2f" path="res://scenes/projectile/projectile.gd" id="1_2dulq"]
-[ext_resource type="Texture2D" uid="uid://byj3vs6uv4qmn" path="res://data/towers/dart_tower/dart_tower.png" id="1_t8015"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iprlq"]
-radius = 4.0
-height = 16.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iprlq"]
-atlas = ExtResource("1_t8015")
-region = Rect2(0, 32, 32, 32)
 
 [node name="Projectile" type="Node2D" unique_id=1223912663]
 script = ExtResource("1_2dulq")
@@ -19,7 +10,5 @@ collision_layer = 8
 collision_mask = 7
 
 [node name="ProjectileHurtBox" type="CollisionShape2D" parent="ProjectileArea" unique_id=151546787]
-shape = SubResource("CapsuleShape2D_iprlq")
 
 [node name="ProjectileSprite" type="Sprite2D" parent="." unique_id=710601040]
-texture = SubResource("AtlasTexture_iprlq")

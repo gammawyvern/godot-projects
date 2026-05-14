@@ -1,16 +1,21 @@
 [gd_scene format=3 uid="uid://rgvjpb1eu2tt"]
 
 [ext_resource type="PackedScene" uid="uid://th7ixfwwyj0x" path="res://scenes/projectile/projectile.tscn" id="1_wrue1"]
+[ext_resource type="Texture2D" uid="uid://byj3vs6uv4qmn" path="res://data/towers/dart_tower/dart_tower.png" id="2_qkosx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wrue1"]
 radius = 4.0
 height = 16.0
 
-[node name="Projectile" unique_id=1223912663 instance=ExtResource("1_wrue1")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3tdb"]
+atlas = ExtResource("2_qkosx")
+region = Rect2(0, 32, 32, 32)
+
+[node name="DartProjectile" unique_id=1223912663 instance=ExtResource("1_wrue1")]
 
 [node name="ProjectileHurtBox" parent="ProjectileArea" parent_id_path=PackedInt32Array(1332996383) index="0" unique_id=151546787]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_wrue1")
 
 [node name="ProjectileSprite" parent="." index="1" unique_id=710601040]
-rotation = 1.5707964
+texture = SubResource("AtlasTexture_f3tdb")

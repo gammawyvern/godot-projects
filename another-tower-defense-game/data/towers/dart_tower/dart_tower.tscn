@@ -11,7 +11,11 @@ region = Rect2(0, 0, 32, 32)
 
 [node name="DartTower" unique_id=589099908 instance=ExtResource("1_31ul7")]
 script = ExtResource("2_axveo")
+shot_delay_time = 1.0
 projectile_scene = ExtResource("3_82u87")
 
 [node name="TowerSprite" parent="." index="1" unique_id=314573998]
 texture = SubResource("AtlasTexture_axveo")
+
+[node name="ShotDelayTimer" type="Timer" parent="." index="2" unique_id=83163117]
+one_shot = true
