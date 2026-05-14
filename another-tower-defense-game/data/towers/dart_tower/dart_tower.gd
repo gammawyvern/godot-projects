@@ -5,6 +5,7 @@ class_name DartTower extends Tower
 
 @onready var shot_delay_timer: Timer = $ShotDelayTimer
 @onready var tower_sprite: Sprite2D = $TowerSprite
+@onready var shot_area: Area2D = $ShotArea
 
 func _ready() -> void:
 	assert(shot_delay_timer != null)
@@ -14,21 +15,37 @@ func _ready() -> void:
 	
 	shot_delay_timer.wait_time = shot_delay_time
 
-func _process(_delta: float) -> void:
+func _on_shot_area_area_entered(area: Area2D) -> void:
 	if can_shoot():
-		_shoot(Vector2.DOWN)
+		_shoot(area)
+
+func _shoot(target: Node2D) -> void:
+	assert(can_shoot())
+	
+	var shot_direction: Vector2 = target.global_position - global_position
+	tower_sprite.rotation = shot_direction.angle()
+	
+	var projectile_node: Projectile = projectile_scene.instantiate() as Projectile
+	projectile_node.initialize(shot_direction)
+	add_child.call_deferred(projectile_node)
+	
+	shot_delay_timer.start()
 
 func can_shoot() -> bool:
 	return shot_delay_timer.is_stopped()
 
-func _shoot(direction: Vector2) -> void:
-	assert(direction.length() != 0)
-	assert(can_shoot())
+func get_target() -> Node2D:
+	var targets: Array[Area2D] = shot_area.get_overlapping_areas()
+	if targets.is_empty():
+		return null
 	
-	tower_sprite.rotation = direction.angle()
+	targets.sort_custom(func(a: Area2D, b: Area2D): return a.global_position.distance_to(global_position) < b.global_position.distance_to(global_position))
 	
-	var projectile_node: Projectile = projectile_scene.instantiate() as Projectile
-	projectile_node.initialize(direction)
-	add_child(projectile_node)
+	return targets[0]
+
+func _on_shot_delay_timer_timeout() -> void:
+	var target: Node2D = get_target()
+	if target == null:
+		return
 	
-	shot_delay_timer.start()
+	_shoot(target)

@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://cp74klnmehk6x" path="res://scenes/enemy/enemy.gd" id="1_22olo"]
 [ext_resource type="Texture2D" uid="uid://dmtmyqwec06de" path="res://scenes/enemy/white_balloon.png" id="2_agpjo"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a3pup"]
+radius = 11.0
+height = 27.0
+
 [node name="Enemy" type="PathFollow2D" unique_id=2079880012]
 rotates = false
 loop = false
@@ -11,3 +15,13 @@ script = ExtResource("1_22olo")
 [node name="Sprite" type="Sprite2D" parent="." unique_id=765188931]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_agpjo")
+
+[node name="EnemyArea" type="Area2D" parent="." unique_id=1334773031]
+position = Vector2(0, -1)
+collision_layer = 4
+collision_mask = 8
+
+[node name="EnemyCollisionShape" type="CollisionShape2D" parent="EnemyArea" unique_id=933315897]
+shape = SubResource("CapsuleShape2D_a3pup")
+
+[connection signal="area_entered" from="EnemyArea" to="." method="_on_enemy_area_area_entered"]

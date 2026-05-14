@@ -44,3 +44,14 @@ func damage(amount: int) -> void:
 func _calculate_children() -> Array[EnemyLayer]:
 	# TODO: Calculate what to actually spawn
 	return []
+
+# Signals
+
+func _on_enemy_area_area_entered(area: Area2D) -> void:
+	var area_parent: Node2D = area.get_parent()
+	if area_parent is not Projectile:
+		return
+	
+	var projectile: Projectile = area_parent as Projectile
+	damage(projectile.damage)
+	projectile.hit_enemy()

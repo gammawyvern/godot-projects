@@ -13,7 +13,10 @@ region = Rect2(0, 32, 32, 32)
 
 [node name="DartProjectile" unique_id=1223912663 instance=ExtResource("1_wrue1")]
 
-[node name="ProjectileHurtBox" parent="ProjectileArea" parent_id_path=PackedInt32Array(1332996383) index="0" unique_id=151546787]
+[node name="ProjectileArea" parent="." index="0" unique_id=1332996383]
+collision_mask = 3
+
+[node name="ProjectileHurtBox" parent="ProjectileArea" index="0" unique_id=151546787]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_wrue1")
 

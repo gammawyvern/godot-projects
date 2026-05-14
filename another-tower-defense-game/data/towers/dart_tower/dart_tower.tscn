@@ -9,13 +9,19 @@
 atlas = ExtResource("2_hdk20")
 region = Rect2(0, 0, 32, 32)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_82u87"]
+radius = 64.0
+
 [node name="DartTower" unique_id=589099908 instance=ExtResource("1_31ul7")]
 script = ExtResource("2_axveo")
 shot_delay_time = 1.0
 projectile_scene = ExtResource("3_82u87")
 
-[node name="TowerSprite" parent="." index="1" unique_id=314573998]
+[node name="TowerSprite" parent="." index="2" unique_id=314573998]
 texture = SubResource("AtlasTexture_axveo")
 
-[node name="ShotDelayTimer" type="Timer" parent="." index="2" unique_id=83163117]
-one_shot = true
+[node name="ShotCollisionArea" parent="ShotArea" parent_id_path=PackedInt32Array(1004752114) index="0" unique_id=1106511828]
+shape = SubResource("CircleShape2D_82u87")
+
+[connection signal="timeout" from="ShotDelayTimer" to="." method="_on_shot_delay_timer_timeout"]
+[connection signal="area_entered" from="ShotArea" to="." method="_on_shot_area_area_entered"]

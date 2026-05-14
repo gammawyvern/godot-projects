@@ -7,7 +7,16 @@
 scale = Vector2(2, 2)
 script = ExtResource("1_r21n7")
 
+[node name="ShotDelayTimer" type="Timer" parent="." unique_id=1310856745]
+one_shot = true
+
 [node name="TowerBaseSprite" type="Sprite2D" parent="." unique_id=401747382]
 texture = ExtResource("1_mg2hd")
 
 [node name="TowerSprite" type="Sprite2D" parent="." unique_id=314573998]
+
+[node name="ShotArea" type="Area2D" parent="." unique_id=1004752114]
+collision_layer = 0
+collision_mask = 4
+
+[node name="ShotCollisionArea" type="CollisionShape2D" parent="ShotArea" unique_id=1106511828]
