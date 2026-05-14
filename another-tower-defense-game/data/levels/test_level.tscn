@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://35rw1lwbxpx8"]
 
 [ext_resource type="PackedScene" uid="uid://djenhs28rp4iu" path="res://scenes/level/level.tscn" id="1_sj2ry"]
-[ext_resource type="Resource" uid="uid://ber4371gtnbdn" path="res://resources/levels/default_level/default_level_data.tres" id="2_rg180"]
+[ext_resource type="Resource" uid="uid://ber4371gtnbdn" path="res://data/rounds/default_rounds/default_rounds_data.tres" id="2_rg180"]
 [ext_resource type="PackedScene" uid="uid://bt1di7tdb2dcx" path="res://data/towers/dart_tower/dart_tower.tscn" id="3_6km33"]
 
 [sub_resource type="Curve2D" id="Curve2D_sj2ry"]

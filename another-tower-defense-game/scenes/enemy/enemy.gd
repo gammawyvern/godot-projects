@@ -38,7 +38,7 @@ func damage(amount: int) -> void:
 	damage_taken += amount
 	
 	if damage_taken >= layer.health:
-		get_parent().remove_child(self)
+		get_parent().remove_child.call_deferred(self)
 		killed.emit(self, _calculate_children())
 
 func _calculate_children() -> Array[EnemyLayer]:

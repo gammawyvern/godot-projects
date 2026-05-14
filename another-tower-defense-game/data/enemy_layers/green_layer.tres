@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="EnemyLayer" format=3 uid="uid://dglmy0t0q5n0g"]
 
 [ext_resource type="Script" uid="uid://dfi3o8gklgneo" path="res://resource_types/enemy_layer.gd" id="1_lujf0"]
-[ext_resource type="Resource" uid="uid://di2mpflmsyomp" path="res://resources/enemy_layers/blue_layer.tres" id="2_lujf0"]
+[ext_resource type="Resource" uid="uid://di2mpflmsyomp" path="res://data/enemy_layers/blue_layer.tres" id="2_lujf0"]
 
 [resource]
 script = ExtResource("1_lujf0")

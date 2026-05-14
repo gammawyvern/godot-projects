@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bdea52dcrsmx4" path="res://resource_types/round_data.gd" id="1_1ea1u"]
 [ext_resource type="Script" uid="uid://cdghdvmo0dnpx" path="res://resource_types/spawn_data.gd" id="2_56khe"]
-[ext_resource type="Resource" uid="uid://dug0y5xrpal5g" path="res://resources/levels/default_level/round_1/reds.tres" id="3_56khe"]
+[ext_resource type="Resource" uid="uid://dug0y5xrpal5g" path="res://data/rounds/default_rounds/round_1/reds.tres" id="3_56khe"]
+[ext_resource type="Resource" uid="uid://8ybp8arsk7ay" path="res://data/rounds/default_rounds/round_2/blues.tres" id="4_wq87x"]
 
 [resource]
 script = ExtResource("1_1ea1u")
-spawns = Array[ExtResource("2_56khe")]([ExtResource("3_56khe")])
+spawns = Array[ExtResource("2_56khe")]([ExtResource("3_56khe"), ExtResource("4_wq87x")])
 metadata/_custom_type_script = "uid://bdea52dcrsmx4"
