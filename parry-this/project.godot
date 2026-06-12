@@ -38,6 +38,16 @@ player_left={
 ]
 }
 
+[layer_names]
+
+2d_render/layer_1="terrain"
+2d_render/layer_6="bullets"
+2d_render/layer_10="player"
+2d_physics/layer_1="terrain"
+2d_physics/layer_7="bullets"
+2d_physics/layer_12="player"
+2d_physics/layer_16="enemies"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
