@@ -19,13 +19,14 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_dovo2")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=480432203]
+visible = false
 shape = SubResource("RectangleShape2D_dovo2")
 
-[node name="ParryArea" type="Area2D" parent="." unique_id=144519267]
+[node name="HurtBox" type="Area2D" parent="." unique_id=144519267]
+visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ParryArea" unique_id=1378874506]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1378874506]
 shape = SubResource("RectangleShape2D_gmlin")
 
 [node name="ParryTimer" type="Timer" parent="." unique_id=1076991960]
-wait_time = 0.25
 one_shot = true
